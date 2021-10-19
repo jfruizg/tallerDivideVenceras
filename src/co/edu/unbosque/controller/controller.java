@@ -17,8 +17,7 @@ public class controller {
 	public void inicializar() {
 
 		vista.mostrarMensaje("Bienvenido a Matrices Cuadradas");
-		int a = vista.recibirInt("Ingrese tamaño para matrices nxn: ");
-		matriz = new Matriz(a);
+		matriz = new Matriz(3);
 		matriz.inicialziarMatriz();
 		vista.mostrarMensaje("________________________________________________________\n" + "Matirz 1 :\n");
 		vista.mostrarMensaje(matriz.imprimirMatriz(matriz.getMatriz1()));

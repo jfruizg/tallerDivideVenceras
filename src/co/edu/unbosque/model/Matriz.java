@@ -77,6 +77,16 @@ public class Matriz {
 	public void setMatriz2(int[][] matriz2) {
 		this.matriz2 = matriz2;
 	}
+
+	public int[][] getRes() {
+		return res;
+	}
+
+	public void setRes(int[][] res) {
+		this.res = res;
+	}
+	
+	
 	
 
 }
