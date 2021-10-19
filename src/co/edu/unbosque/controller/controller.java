@@ -1,23 +1,36 @@
 package co.edu.unbosque.controller;
 
-import co.edu.unbosque.model.productoMatrices;
+import co.edu.unbosque.model.Matriz;
 import co.edu.unbosque.view.vistaPrincipal;
 
 public class controller {
 
-    vistaPrincipal vista;
-    productoMatrices modelo;
+	private vistaPrincipal vista;
+	private Matriz matriz;
 
-    public controller() {
-        vista = new vistaPrincipal();
-        modelo = new productoMatrices();
-        inicializar();
-    }
-    public void inicializar(){
+	public controller() {
+		vista = new vistaPrincipal();
 
-        vista.mostrarMensaje("Bienvenido a Matrices Cuadradas");
+		inicializar();
+	}
 
-    }
+	public void inicializar() {
 
+		vista.mostrarMensaje("Bienvenido a Matrices Cuadradas");
+		int a = vista.recibirInt("Ingrese tamaño para matrices nxn: ");
+		matriz = new Matriz(a);
+		matriz.inicialziarMatriz();
+		vista.mostrarMensaje("________________________________________________________\n" + "Matirz 1 :\n");
+		vista.mostrarMensaje(matriz.imprimirMatriz(matriz.getMatriz1()));
+		vista.mostrarMensaje("________________________________________________________\n" + "Matirz 2 :\n");
+		vista.mostrarMensaje(matriz.imprimirMatriz(matriz.getMatriz2()));
+
+		vista.mostrarMensaje("Matriz multiplicada sin divide y venceras: ");
+		matriz.multiSinDivide(matriz.getMatriz1(), matriz.getMatriz2());
+		vista.mostrarMensaje("________________________________________________________\n"
+				+ "Multiplicacion de las dos matices sin divide y venceras :\n");
+		vista.mostrarMensaje(matriz.imprimirMatriz(matriz.getRes()));
+
+	}
 
 }
