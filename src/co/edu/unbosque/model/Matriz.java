@@ -49,6 +49,19 @@ public class Matriz {
 
 	}
 
+	public String imprimirMatriz(int[][] matriz, int fil, int col) {
+		String a = "";
+		for (int i = 0; i < fil; i++) {
+			for (int j = 0; j < col; j++) {
+				a += matriz[i][j] + "\t";
+			}
+
+			a += "\n";
+		}
+		return a;
+
+	}
+
 	public void multiSinDivide(int[][] a, int[][] b) {
 		if (a[0].length == b.length) {
 			for (int i = 0; i < a.length; i++) {
@@ -59,6 +72,26 @@ public class Matriz {
 				}
 			}
 		}
+
+	}
+
+	public int[][] adicionarColFil(int[][] a) {
+		int[][] temp = new int[fila + 1][columna + 1];
+
+		for (int i = 0; i < fila + 1; i++) {
+			for (int j = 0; j < columna + 1; j++) {
+				temp[i][j] = 0;
+			}
+
+		}
+
+		for (int i = 0; i < fila; i++) {
+			for (int j = 0; j < columna; j++) {
+				temp[i][j] = a[i][j];
+			}
+		}
+
+		return temp;
 
 	}
 
